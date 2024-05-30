@@ -2,8 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Contact
-{
+public class Contact {
     private String firstName;
     private String lastName;
     private String address;
@@ -15,12 +14,10 @@ public class Contact
 
     private static HashMap<String, String> person = new HashMap<>();
 
-    public Contact()
-    {
+    public Contact() {
     }
 
-    public void addContact()
-    {
+    public void addContact() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter First Name");
@@ -56,16 +53,14 @@ public class Contact
         person.put("email", email);
     }
 
-    public void updateContact()
-    {
+    public void updateContact() {
         System.out.println("Enter Value to Change\n(1) First name\n(2) Last name\n(3) Address\n(4) City\n(5) State\n(6) Zip\n(7) Phone Number\n(8) Email");
         Scanner sc = new Scanner(System.in);
         int option = sc.nextInt();
         sc.nextLine();  // Consume newline left-over
         String newValue;
 
-        switch (option)
-        {
+        switch (option) {
             case 1:
                 System.out.println("Enter new First name:");
                 newValue = sc.nextLine();
@@ -112,6 +107,50 @@ public class Contact
         }
     }
 
+    public void deleteInfo() {
+        System.out.println("Enter the field to delete\n(1) First name\n(2) Last name\n(3) Address\n(4) City\n(5) State\n(6) Zip\n(7) Phone Number\n(8) Email");
+        Scanner sc = new Scanner(System.in);
+        int option = sc.nextInt();
+        sc.nextLine();  // Consume newline left-over
+
+        switch (option) {
+            case 1:
+                person.remove("firstName");
+                System.out.println("First name removed.");
+                break;
+            case 2:
+                person.remove("lastName");
+                System.out.println("Last name removed.");
+                break;
+            case 3:
+                person.remove("address");
+                System.out.println("Address removed.");
+                break;
+            case 4:
+                person.remove("city");
+                System.out.println("City removed.");
+                break;
+            case 5:
+                person.remove("state");
+                System.out.println("State removed.");
+                break;
+            case 6:
+                person.remove("zip");
+                System.out.println("Zip removed.");
+                break;
+            case 7:
+                person.remove("phoneNumber");
+                System.out.println("Phone number removed.");
+                break;
+            case 8:
+                person.remove("email");
+                System.out.println("Email removed.");
+                break;
+            default:
+                System.out.println("Invalid option.");
+                break;
+        }
+    }
 
     public String getInfo() {
         System.out.println("Updated Contact Information:");

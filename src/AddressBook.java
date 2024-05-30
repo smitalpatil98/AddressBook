@@ -1,6 +1,5 @@
 import java.util.*;
-public class AddressBook
-{
+public class AddressBook {
     String firstName;
     String lastName;
     String address;
@@ -20,6 +19,7 @@ public class AddressBook
         this.zip = zip;
         this.phoneNumber = phoneNumber;
         this.email = email;
+
     }
 
     public static void main(String[] args)
