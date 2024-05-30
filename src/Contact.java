@@ -1,3 +1,5 @@
+
+
 public class Contact
 {
     String firstName;
@@ -21,7 +23,8 @@ public class Contact
     }
     public String getInfo()
     {
-        return "First name is"+firstName+"Last Name is"+lastName+"Adress is"+address+"City is"+city+"State is"+state+"Zip is "+zip+"Phone number is"+phoneNumber+"Email is "+email;
+        return "First name is"+firstName+"Last Name is"+lastName+"Address is"+address+"City is"+city+"State is"+state+"Zip is "+zip+"Phone number is"+phoneNumber+"Email is "+email;
+
     }
     }
 
