@@ -1,28 +1,40 @@
 import java.util.*;
+import java.util.Scanner;
 public class AddressBook {
-    String firstName;
-    String lastName;
-    String address;
-    String city;
-    String state;
-    String zip;
-    String phoneNumber;
-    String email;
+    public static boolean exit = true;
 
+    public static void options() {
+        System.out.println("(1) Create New Contact\n(2) Edit Contact\n(3) Delete Contact\n(4) Display\n(5) Exit");
+        Scanner sc = new Scanner(System.in);
+        Contact obj = new Contact();
+        int option = sc.nextInt();
 
-    public AddressBook(String firstName, String lastName, String address, String city, String state, String zip, String phoneNumber, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-
+        switch (option) {
+            case 1:
+                obj.addContact();
+                break;
+            case 2:
+                obj.updateContact();
+                break;
+            case 3:
+                obj.deleteInfo();
+                break;
+            case 4:
+                System.out.println(obj.getInfo());
+                break;
+            case 5:
+                exit = false;
+                break;
+            default:
+                System.out.println("Invalid option.");
+                break;
+        }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
+        System.out.println("******Welcome to Address Book*******");
+        while (exit) {
+            options();
+        }
     }
 }
